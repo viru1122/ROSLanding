@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free IEPF Share Check | Claim Your Unclaimed Shares</title>
+    <meta name="description" content="Check if you have unclaimed shares in IEPF for FREE. Thousands of crores are waiting to be claimed. Start your free eligibility check now.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Main Styles (same as before) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1E293B;
+            background: linear-gradient(135deg, #FF5F00 0%, #1E3A8A 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            color: white;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            opacity: 0.9;
+        }
+
+        .header-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .header-links i {
+            margin-right: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 40px 20px 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+
+        .urgency-badge {
+            background: #FFD700;
+            color: #1E3A8A;
+            padding: 8px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+
+        /* Statistics */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Main Form Card */
+        .form-card {
+            background: white;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .form-card h2 {
+            color: #1E3A8A;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .form-card p {
+            color: #64748B;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FF5F00;
+            box-shadow: 0 0 0 3px rgba(255,95,0,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            background: #FF5F00;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #E05500;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20b859;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .divider::before { left: 0; }
+        .divider::after { right: 0; }
+        .divider span { background: white; padding: 0 10px; color: #64748B; }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+            color: white;
+        }
+
+        .feature {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        /* Company Links Bar */
+        .company-links {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .company-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .company-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: white;
+            padding: 60px 0;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .testimonial-card i {
+            color: #FF5F00;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .client-name {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #1E3A8A;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: white;
+            opacity: 0.9;
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ===== POPUP STYLES ===== */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            max-width: 450px;
+            width: 90%;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            animation: popupSlide 0.5s ease-out;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        @keyframes popupSlide {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .popup-close:hover {
+            color: #FF5F00;
+        }
+
+        .popup-icon {
+            font-size: 3rem;
+            color: #FF5F00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .popup h3 {
+            color: #1E3A8A;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .popup p {
+            color: #64748B;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .popup-form-group {
+            margin-bottom: 15px;
+        }
+
+        .popup-form-group input,
+        .popup-form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .popup-form-group input:focus,
+        .popup-form-group select:focus {
+            outline: none;
+            border-color: #FF5F00;
+        }
+
+        .popup-btn {
+            width: 100%;
+            padding: 14px;
+            background: #FF5F00;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .popup-btn:hover {
+            background: #E05500;
+        }
+
+        .popup-whatsapp {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .popup-whatsapp a {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .popup-whatsapp a:hover {
+            text-decoration: underline;
+        }
+
+        /* Discount Timer */
+        .timer-popup {
+            text-align: center;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FF5F00;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 { font-size: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .features { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .company-links { flex-direction: column; align-items: center; }
+            .popup-content { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <a href="https://indiashareclaims.vercel.app/index.html" class="logo">
+                <i class="fas fa-shield-alt"></i> IndiaSharesClaim
+            </a>
+            <div class="header-links">
+                <a href="https://indiashareclaims.vercel.app/how-it-works.html">
+                    <i class="fas fa-info-circle"></i> How It Works
+                </a>
+                <a href="https://indiashareclaims.vercel.app/blog.html">
+                    <i class="fas fa-blog"></i> Blog
+                </a>
+                <a href="https://indiashareclaims.vercel.app/index.html#contact">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="urgency-badge">
+                <i class="fas fa-clock"></i> Free Eligibility Check - Limited Time
+            </div>
+            <h1>Check If You Have Unclaimed Shares in <span style="color: #FFD700;">IEPF</span></h1>
+            <p>Over ₹68,800 Crores in unclaimed shares are waiting to be claimed. 80,000+ investors already found their lost wealth with us.</p>
+            
+            <div class="trust-badges">
+                <div class="trust-item">
+                    <i class="fas fa-handshake"></i> Partnered with CAs
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i> No Recovery, No Fee
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i> 100% Confidential
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">₹68,800 Cr</div>
+                    <div class="stat-label">Unclaimed in IEPF</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">80k+</div>
+                    <div class="stat-label">Investors Found</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">₹10,000 Cr</div>
+                    <div class="stat-label">Recovered</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Form -->
+        <div class="form-card">
+            <h2>Start Your Free Recovery Check</h2>
+            <p>Fill the form below – Takes less than 2 minutes!</p>
+            
+            <form id="landingForm" onsubmit="submitLandingForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name *" id="mainName" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number *" id="mainPhone" required pattern="[0-9]{10}">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" id="mainEmail">
+                </div>
+                
+                <div class="form-group">
+                    <select id="mainQuery" required>
+                        <option value="">Select Query Type *</option>
+                        <option>Lost Physical Share Certificates</option>
+                        <option>IEPF Claim (Shares/Dividends)</option>
+                        <option>Legal Heir / Inheritance</option>
+                        <option>Unclaimed Dividends</option>
+                        <option>Not Sure - Help Me Check</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <textarea 
+                        placeholder="Tell us about your shares..." 
+                        rows="3"
+                        id="mainMessage"
+                    ></textarea>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <i class="fas fa-search"></i> Check My Eligibility Free
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <a href="https://wa.me/917050426046?text=Hi%2C%20I%20want%20to%20check%20my%20shares." 
+               class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- Company Links -->
+        <div class="company-links">
+            <a href="https://indiashareclaims.vercel.app/how-it-works.html">
+                <i class="fas fa-info-circle"></i> Learn How It Works
+            </a>
+            <a href="https://indiashareclaims.vercel.app/blog.html">
+                <i class="fas fa-blog"></i> Read Recovery Guides
+            </a>
+            <a href="https://indiashareclaims.vercel.app/index.html">
+                <i class="fas fa-home"></i> Main Website
+            </a>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials-section">
+            <h2 style="text-align: center; color: #1E3A8A; margin-bottom: 40px;">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"The team helped me get shares worth ₹8 lac which I was completely unaware of."</p>
+                    <div class="client-name">- Rajesh Sharma</div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"They helped recover ₹10 lac from old papers I was about to dispose."</p>
+                    <div class="client-name">- Priya Mehta</div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Very understanding. Helped me get shares from IEPF recovered."</p>
+                    <div class="client-name">- S. Krishnamurthy</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                <a href="https://indiashareclaims.vercel.app/index.html">Home</a> | 
+                <a href="https://indiashareclaims.vercel.app/how-it-works.html">How It Works</a> | 
+                <a href="https://indiashareclaims.vercel.app/blog.html">Blog</a>
+            </p>
+            <p style="margin-top: 20px;">
+                <i class="fas fa-phone"></i> <a href="tel:7050426046">+91 70504 26046</a> | 
+                <i class="fas fa-envelope"></i> <a href="mailto:furjaden79@gmail.com">furjaden79@gmail.com</a>
+            </p>
+            <p style="margin-top: 20px;">© 2026 IndiaSharesClaim | Vishal Kumar</p>
+        </div>
+    </div>
+
+    <!-- ===== POPUP 1: Exit Intent Popup ===== -->
+    <div id="exitPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('exitPopup')">&times;</span>
+            <div class="popup-icon">
+                <i class="fas fa-gift"></i>
+            </div>
+            <h3>Wait! Don't Leave Empty-Handed!</h3>
+            <p>You might have unclaimed shares worth lakhs. Let us check for FREE right now.</p>
+            
+            <form id="exitPopupForm" onsubmit="submitPopupForm(event, 'exitPopup')">
+                <div class="popup-form-group">
+                    <input type="text" placeholder="Full Name *" required>
+                </div>
+                <div class="popup-form-group">
+                    <input type="tel" placeholder="Phone Number *" required pattern="[0-9]{10}">
+                </div>
+                <div class="popup-form-group">
+                    <select required>
+                        <option value="">Select Query Type</option>
+                        <option>Lost Shares</option>
+                        <option>IEPF Claim</option>
+                        <option>Legal Heir</option>
+                    </select>
+                </div>
+                <button type="submit" class="popup-btn">Check Now - Free</button>
+            </form>
+            
+            <div class="popup-whatsapp">
+                <a href="https://wa.me/917050426046" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== POPUP 2: Timer Popup (Shows after 30 seconds) ===== -->
+    <div id="timerPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('timerPopup')">&times;</span>
+            <div class="timer-popup">
+                <div class="timer" id="countdown">05:00</div>
+                <p>Limited time offer!</p>
+            </div>
+            <h3>Free Eligibility Check Expiring Soon!</h3>
+            <p>Don't miss out on your unclaimed shares. Check now before it's too late.</p>
+            
+            <form id="timerPopupForm" onsubmit="submitPopupForm(event, 'timerPopup')">
+                <div class="popup-form-group">
+                    <input type="text" placeholder="Full Name *" required>
+                </div>
+                <div class="popup-form-group">
+                    <input type="tel" placeholder="Phone Number *" required pattern="[0-9]{10}">
+                </div>
+                <button type="submit" class="popup-btn">Claim Free Check</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== POPUP 3: Scroll Popup (Shows at 50% scroll) ===== -->
+    <div id="scrollPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup('scrollPopup')">&times;</span>
+            <div class="popup-icon">
+                <i class="fas fa-search-dollar"></i>
+            </div>
+            <h3>Found Your Shares Yet?</h3>
+            <p>Let us help you check. Thousands have already found their lost wealth!</p>
+            
+            <form id="scrollPopupForm" onsubmit="submitPopupForm(event, 'scrollPopup')">
+                <div class="popup-form-group">
+                    <input type="text" placeholder="Full Name *" required>
+                </div>
+                <div class="popup-form-group">
+                    <input type="tel" placeholder="Phone Number *" required pattern="[0-9]{10}">
+                </div>
+                <div class="popup-form-group">
+                    <input type="email" placeholder="Email">
+                </div>
+                <button type="submit" class="popup-btn">Check My Eligibility</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Your Google Sheets URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkWgxWibHRL6tC-iIApGPNJiKOWyBynoCogMLpSV6Wq0_ChylfOhYcb4S_oGX03YnZfg/exec';
+
+        // Track if popups have been shown
+        let exitShown = false;
+        let timerShown = false;
+        let scrollShown = false;
+
+        // Timer countdown
+        let timeLeft = 300; // 5 minutes in seconds
+        const timerElement = document.getElementById('countdown');
+        
+        if (timerElement) {
+            setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    const minutes = Math.floor(timeLeft / 60);
+                    const seconds = timeLeft % 60;
+                    timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }
+            }, 1000);
+        }
+
+        // Show popup functions
+        function showPopup(popupId) {
+            document.getElementById(popupId).style.display = 'flex';
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+        }
+
+        // Exit Intent Popup
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !exitShown) {
+                showPopup('exitPopup');
+                exitShown = true;
+            }
+        });
+
+        // Timer Popup (after 30 seconds)
+        setTimeout(function() {
+            if (!timerShown) {
+                showPopup('timerPopup');
+                timerShown = true;
+            }
+        }, 30000);
+
+        // Scroll Popup (at 50% scroll)
+        window.addEventListener('scroll', function() {
+            if (!scrollShown) {
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                if (scrollPercent > 50) {
+                    showPopup('scrollPopup');
+                    scrollShown = true;
+                }
+            }
+        });
+
+        // Get UTM parameters
+        function getUTMParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                source: urlParams.get('utm_source') || 'direct',
+                medium: urlParams.get('utm_medium') || 'none',
+                campaign: urlParams.get('utm_campaign') || 'none'
+            };
+        }
+
+        // Submit main form
+        async function submitLandingForm(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('mainName').value.trim(),
+                phone: document.getElementById('mainPhone').value.trim(),
+                email: document.getElementById('mainEmail').value.trim() || 'Not provided',
+                queryType: document.getElementById('mainQuery').value,
+                message: document.getElementById('mainMessage').value.trim() || 'No message',
+                source: 'Main Form - ' + getUTMParams().source,
+                timestamp: new Date().toISOString()
+            };
+
+            if (!formData.name || !formData.phone) {
+                alert('Please fill in your name and phone number');
+                return;
+            }
+
+            if (!/^\d{10}$/.test(formData.phone)) {
+                alert('Please enter a valid 10-digit phone number');
+                return;
+            }
+
+            const btn = event.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                alert('✅ Thank you! We will contact you within 24 hours.');
+                event.target.reset();
+                
+            } catch (error) {
+                alert('Thank you! We received your request.');
+                
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-search"></i> Check My Eligibility Free';
+            }
+        }
+
+        // Submit popup forms
+        async function submitPopupForm(event, popupId) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = {
+                name: form.querySelector('input[type="text"]').value.trim(),
+                phone: form.querySelector('input[type="tel"]').value.trim(),
+                email: form.querySelector('input[type="email"]')?.value.trim() || 'Not provided',
+                queryType: form.querySelector('select')?.value || 'Popup Form',
+                message: 'Popup submission',
+                source: 'Popup - ' + popupId + ' - ' + getUTMParams().source,
+                timestamp: new Date().toISOString()
+            };
+
+            if (!formData.name || !formData.phone) {
+                alert('Please fill in your name and phone number');
+                return;
+            }
+
+            if (!/^\d{10}$/.test(formData.phone)) {
+                alert('Please enter a valid 10-digit phone number');
+                return;
+            }
+
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                alert('✅ Thank you! We will contact you soon.');
+                closePopup(popupId);
+                
+            } catch (error) {
+                alert('Thank you! We received your request.');
+                closePopup(popupId);
+                
+            } finally {
+                btn.disabled = false;
+                btn.textContent = originalText;
+            }
+        }
+
+        // Make functions global
+        window.submitLandingForm = submitLandingForm;
+        window.submitPopupForm = submitPopupForm;
+        window.closePopup = closePopup;
+    </script>
+</body>
+</html>
